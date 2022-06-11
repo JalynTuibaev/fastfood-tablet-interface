@@ -1,0 +1,48 @@
+.orderItem {
+    display: flex;
+    align-items: center;
+}
+
+.orderItem__name {
+    width: 140px;
+}
+
+.orderItem__text {
+    margin-left: 25px;
+}
+
+.btn {
+    margin-left: 25px;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 24px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.btn:focus {
+    color: #171e29;
+}
+
+.btn:hover {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
+
+.btn:active {
+    border-color: #06f;
+    color: #06f;
+    fill: #06f;
+}
