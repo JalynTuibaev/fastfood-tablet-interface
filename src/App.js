@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Item from "./components/Item/Item";
 import cheeseburgerImage from './assets/cheeseburger.png';
 import teaImage from './assets/tea.png';
 import coffeeImage from './assets/coffee.png';
@@ -28,6 +29,7 @@ const App = () => {
 
     return (
         <>
+            <Item img={MENU[0].image} name={MENU[0].name} price={MENU[0].price} />
         </>
     );
 };
