@@ -1,10 +1,13 @@
 import React from 'react';
 import OrderItem from "../OrderItem/OrderItem";
-import './Order.css';
+import Total from "../Total/Total";
 import {nanoid} from "nanoid";
+import './Order.css';
 
 const Order = props => {
+    let num = 0;
     const render = props.menu.map((item, index) => {
+        num += item.count;
        if (item.count > 0) {
            return (
                <OrderItem
@@ -16,13 +19,22 @@ const Order = props => {
                />
            );
        }
+       return ' ';
     });
 
+    const text = () => {
+        if (num === 0) {
+            return 'Order is empty! Please add some items';
+        }
+    }
+
     return (
-        <fieldset className='fieldset'>
+        <fieldset className='fieldset-order'>
             <legend>Order details: </legend>
             <div className='order'>
+                {text()}
                 {render}
+                {num > 0 ? <Total total={props.total} /> : ''}
             </div>
         </fieldset>
     );

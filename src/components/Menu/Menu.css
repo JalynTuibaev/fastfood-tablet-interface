@@ -1,7 +1,9 @@
+.fieldset {
+    width: 46%;
+}
+
 .menu {
     display: flex;
-    justify-content: center;
-    width: 40%;
     flex-wrap: wrap;
     padding: 20px;
 }

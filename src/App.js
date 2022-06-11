@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Menu from "./components/Menu/Menu";
+import Order from "./components/Order/Order";
 import cheeseburgerImage from './assets/cheeseburger.png';
 import teaImage from './assets/tea.png';
 import coffeeImage from './assets/coffee.png';
@@ -27,10 +28,48 @@ const App = () => {
         {name: 'Cola', count: 0}
     ]);
 
+    const add = index => {
+        const menuCopy = menu.map((item, i) => {
+           if (index === i) {
+               return {
+                    ...item,
+                   count: item.count +1
+               };
+           }
+           return item;
+        });
+
+        setMenu(menuCopy);
+    };
+
+    const del = index => {
+        const menuCopy = menu.map((item, i) => {
+            if (index === i) {
+                return {
+                    ...item,
+                    count: item.count - 1
+                };
+            }
+            return item;
+        });
+
+        setMenu(menuCopy);
+    };
+
+    const total = () => {
+        let sum = 0;
+        for (let i = 0; i < menu.length; i++) {
+            sum += MENU[i].price * menu[i].count;
+        }
+        return sum;
+    };
+
+
     return (
-        <>
-            <Menu menu={MENU} count={menu} />
-        </>
+        <div className='container'>
+            <Menu menu={MENU} count={menu} OnAdd={(index) => add(index)} />
+            <Order menu={menu} MENU={MENU} OnDel={(index) => del(index)} total={total()} />
+        </div>
     );
 };
 

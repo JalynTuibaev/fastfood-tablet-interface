@@ -10,14 +10,14 @@ const Menu = props => {
                name={item.name}
                price={item.price}
                key={index}
-               count={props.count[index].count}
+               onAdd={() => props.OnAdd(index)}
            />
        );
     });
 
     return (
         <>
-            <fieldset>
+            <fieldset className='fieldset'>
                 <legend>Add items:</legend>
                 <div className='menu'>
                     {render}

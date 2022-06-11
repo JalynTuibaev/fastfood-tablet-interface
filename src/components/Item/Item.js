@@ -3,7 +3,7 @@ import './Item.css';
 
 const Item = props => {
     return (
-        <div className='item'>
+        <div className='item' onClick={props.onAdd}>
             <div className='item__img-body'>
                 <img src={props.img} alt={props.name} />
             </div>

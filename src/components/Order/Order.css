@@ -1,0 +1,9 @@
+.fieldset-order {
+    width: 34%;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
